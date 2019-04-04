@@ -44,20 +44,6 @@
       </div>
     </div>
   </div>
-
-  <!-- Bootstrap core JavaScript-->
-  <script src="<?=base_url('assets/');?>vendor/jquery/jquery.min.js"></script>
-  <script src="<?=base_url('assets/');?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Core plugin JavaScript-->
-  <script src="<?=base_url('assets/');?>vendor/jquery-easing/jquery.easing.min.js"></script>
-
-  <!-- Custom scripts for all pages-->
-  <script src="<?=base_url('assets/');?>js/sb-admin-2.min.js"></script>
-  <script src="<?=base_url('assets/');?>js/jquery.dataTables.min.js"></script>
-  <script src="<?=base_url('assets/vendor/DataTables/');?>datatables.min.js"></script>
-  <script src="<?=base_url('assets/vendor/jquery-ui-1.12.1/');?>jquery-ui.min.js"></script>
-  
   <script>
   $(document).ready( function () {
     $('table.table').DataTable({
@@ -65,5 +51,17 @@
       buttons: [ 'copy', 'excel', 'pdf' ],
       pageLength: '25'
     });
-  } );
+
+    $( "#topik" ).autocomplete({
+      source: "<?php echo site_url('buku/topik_autocomplete/?');?>"
+    });
+
+    $( "#penerbit" ).autocomplete({
+      source: "<?php echo site_url('buku/penerbit_autocomplete/?');?>"
+    });
+
+    $( "#penulis" ).autocomplete({
+      source: "<?php echo site_url('buku/penulis_autocomplete/?');?>"
+    });
+  });
   </script>

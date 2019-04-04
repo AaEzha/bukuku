@@ -170,6 +170,13 @@ class Buku_model extends CI_Model {
 		return $s;
 	}
 
+	public function get_autocomplete($title,$tbl){
+		$this->db->like('nama', $title , 'both');
+        $this->db->order_by('nama', 'ASC');
+        $this->db->limit(10);
+        return $this->db->get($tbl)->result();
+	}
+
 }
 
 /* End of file Buku_model.php */

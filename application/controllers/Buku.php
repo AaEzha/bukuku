@@ -101,6 +101,39 @@ class Buku extends CI_Controller {
 		}
 	}
 
+	public function topik_autocomplete(){
+        if (isset($_GET['term'])) {
+            $result = $this->buku->get_autocomplete($_GET['term'], 'topik');
+            if (count($result) > 0) {
+            foreach ($result as $row)
+                $arr_result[] = $row->nama;
+                echo json_encode($arr_result);
+            }
+        }
+    }
+
+	public function penerbit_autocomplete(){
+        if (isset($_GET['term'])) {
+            $result = $this->buku->get_autocomplete($_GET['term'], 'penerbit');
+            if (count($result) > 0) {
+            foreach ($result as $row)
+                $arr_result[] = $row->nama;
+                echo json_encode($arr_result);
+            }
+        }
+    }
+
+	public function penulis_autocomplete(){
+        if (isset($_GET['term'])) {
+            $result = $this->buku->get_autocomplete($_GET['term'], 'penulis');
+            if (count($result) > 0) {
+            foreach ($result as $row)
+                $arr_result[] = $row->nama;
+                echo json_encode($arr_result);
+            }
+        }
+    }
+
 }
 
 /* End of file Buku.php */
