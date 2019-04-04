@@ -12,14 +12,9 @@ class Dashboard extends CI_Controller {
 	public function index()
 	{
 		$data['title'] = 'Rak Buku';
-
 		$data['buku'] = $this->dashboard->semua();
-
-		$this->load->view('templates/header', $data);
-		$this->load->view('templates/sidebar', $data);
-		$this->load->view('templates/topbar', $data);
-		$this->load->view('dashboard/index', $data);
-		$this->load->view('templates/footer', $data);
+		$data['konten'] = "dashboard/index";
+		$this->load->view('templates/index', $data);
 		
 		
 	}

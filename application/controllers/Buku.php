@@ -36,11 +36,8 @@ class Buku extends CI_Controller {
 			}
 			redirect('buku','refresh');	
 		}else{
-			$this->load->view('templates/header', $data);
-			$this->load->view('templates/sidebar', $data);
-			$this->load->view('templates/topbar', $data);
-			$this->load->view('buku/index', $data);
-			$this->load->view('templates/footer', $data);
+			$data['konten'] = "buku/index";
+			$this->load->view('templates/index', $data);
 		}
 	}
 
@@ -49,11 +46,8 @@ class Buku extends CI_Controller {
 		$data['title'] = "Manajemen Data Buku";
 		$this->load->model('Dashboard_model', 'dashboard');
 		$data['buku'] = $this->dashboard->semua();
-		$this->load->view('templates/header', $data);
-		$this->load->view('templates/sidebar', $data);
-		$this->load->view('templates/topbar', $data);
-		$this->load->view('buku/data', $data);
-		$this->load->view('templates/footer', $data);
+		$data['konten'] = "buku/data";
+		$this->load->view('templates/index', $data);
 	}
 
 	public function hapus()
@@ -80,11 +74,8 @@ class Buku extends CI_Controller {
 		if($id){
 			$data['title'] = "Ubah Data Buku";
 			$data['buku'] = $this->buku->ambil($id);
-			$this->load->view('templates/header', $data);
-			$this->load->view('templates/sidebar', $data);
-			$this->load->view('templates/topbar', $data);
-			$this->load->view('buku/edit', $data);
-			$this->load->view('templates/footer', $data);
+			$data['konten'] = "buku/edit";
+			$this->load->view('templates/index', $data);
 		}else{
 			$this->form_validation->set_rules('id', 'ID', 'trim|required');
 			$this->form_validation->set_rules('password', 'Password', 'trim|required');

@@ -24,19 +24,13 @@ class Filter extends CI_Controller {
 			$data['title'] .= " : ";
 			$data['title'] .= $this->filter->namaTopik($key);
 			$data['buku'] = $this->buku->filter('topik',$key);
-			$this->load->view('templates/header', $data);
-			$this->load->view('templates/sidebar', $data);
-			$this->load->view('templates/topbar', $data);
-			$this->load->view('filter/topikdata', $data);
-			$this->load->view('templates/footer', $data);
+			$data['konten'] = "filter/topikdata";
 		}else{
 			$data['topik'] = $this->filter->semuaTopik();
-			$this->load->view('templates/header', $data);
-			$this->load->view('templates/sidebar', $data);
-			$this->load->view('templates/topbar', $data);
-			$this->load->view('filter/topik', $data);
-			$this->load->view('templates/footer', $data);
+			$data['konten'] = "filter/topik";
 		}
+
+		$this->load->view('templates/index', $data);
 	}
 
 	public function penerbit($key='')
@@ -48,19 +42,13 @@ class Filter extends CI_Controller {
 			$data['title'] .= " : ";
 			$data['title'] .= $this->filter->namaPenerbit($key);
 			$data['buku'] = $this->buku->filter('penerbit',$key);
-			$this->load->view('templates/header', $data);
-			$this->load->view('templates/sidebar', $data);
-			$this->load->view('templates/topbar', $data);
-			$this->load->view('filter/penerbitdata', $data);
-			$this->load->view('templates/footer', $data);
+			$data['konten'] = "filter/penerbitdata";
 		}else{
 			$data['penerbit'] = $this->filter->semuaPenerbit();
-			$this->load->view('templates/header', $data);
-			$this->load->view('templates/sidebar', $data);
-			$this->load->view('templates/topbar', $data);
-			$this->load->view('filter/penerbit', $data);
-			$this->load->view('templates/footer', $data);
+			$data['konten'] = "filter/penerbit";
 		}
+
+		$this->load->view('templates/index', $data);
 	}
 
 	public function penulis($key='')
@@ -72,19 +60,13 @@ class Filter extends CI_Controller {
 			$data['title'] .= " : ";
 			$data['title'] .= $this->filter->namaPenulis($key);
 			$data['buku'] = $this->buku->filter('penulis',$key);
-			$this->load->view('templates/header', $data);
-			$this->load->view('templates/sidebar', $data);
-			$this->load->view('templates/topbar', $data);
-			$this->load->view('filter/penulisdata', $data);
-			$this->load->view('templates/footer', $data);
+			$data['konten'] = "filter/penulisdata";
 		}else{
 			$data['penulis'] = $this->filter->semuaPenulis();
-			$this->load->view('templates/header', $data);
-			$this->load->view('templates/sidebar', $data);
-			$this->load->view('templates/topbar', $data);
-			$this->load->view('filter/penulis', $data);
-			$this->load->view('templates/footer', $data);
+			$data['konten'] = "filter/penulis";
 		}
+
+		$this->load->view('templates/index', $data);
 	}
 
 	public function tahun($key='')
@@ -96,19 +78,13 @@ class Filter extends CI_Controller {
 			$data['title'] .= " : ";
 			$data['title'] .= $key;
 			$data['buku'] = $this->buku->filter('tahun',$key);
-			$this->load->view('templates/header', $data);
-			$this->load->view('templates/sidebar', $data);
-			$this->load->view('templates/topbar', $data);
-			$this->load->view('filter/penulisdata', $data);
-			$this->load->view('templates/footer', $data);
+			$data['konten'] = "filter/penulisdata";
 		}else{
 			$data['tahun'] = $this->filter->semuaTahun();
-			$this->load->view('templates/header', $data);
-			$this->load->view('templates/sidebar', $data);
-			$this->load->view('templates/topbar', $data);
-			$this->load->view('filter/tahun', $data);
-			$this->load->view('templates/footer', $data);
+			$data['konten'] = "filter/tahun";
 		}
+
+		$this->load->view('templates/index', $data);
 	}
 
 }
