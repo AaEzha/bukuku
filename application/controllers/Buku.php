@@ -24,7 +24,7 @@ class Buku extends CI_Controller {
 		$this->form_validation->set_rules('penerbit', 'Penerbit', 'trim|required');
 		$this->form_validation->set_rules('penulis', 'Penulis', 'trim|required');
 		$this->form_validation->set_rules('tahun', 'Tahun Terbit', 'trim|required|min_length[4]|max_length[4]');
-		$this->form_validation->set_rules('isbn', 'ISBN', 'trim|required');
+		$this->form_validation->set_rules('isbn', 'ISBN', 'trim|required|is_unique[buku.isbn]');
 		$this->form_validation->set_error_delimiters('<span class="text-danger">','</span>');
 
 		if($this->form_validation->run() == true){

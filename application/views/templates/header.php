@@ -39,6 +39,7 @@
   <link href="<?=base_url('assets/');?>css/sb-admin-2.min.css" rel="stylesheet">
   <link href="<?=base_url('assets/');?>css/jquery.dataTables.min.css" rel="stylesheet">
   <link href="<?=base_url('assets/vendor/DataTables/');?>datatables.min.css" rel="stylesheet">
+  <link href="<?=base_url('assets/vendor/jquery-ui-1.12.1/');?>jquery-ui.min.css" rel="stylesheet">
 
 </head>
 

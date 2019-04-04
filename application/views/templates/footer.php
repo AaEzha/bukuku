@@ -8,7 +8,7 @@
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Tim simPEL 2012 - <?=date('Y');?></span>
+            <span>Copyright &copy; Reza Nurfachmi - Bukuku <?=date('Y');?></span>
           </div>
         </div>
       </footer>
@@ -55,6 +55,7 @@
   <script src="<?=base_url('assets/');?>js/sb-admin-2.min.js"></script>
   <script src="<?=base_url('assets/');?>js/jquery.dataTables.min.js"></script>
   <script src="<?=base_url('assets/vendor/DataTables/');?>datatables.min.js"></script>
+  <script src="<?=base_url('assets/vendor/jquery-ui-1.12.1/');?>jquery-ui.min.js"></script>
   
   <script>
   $(document).ready( function () {
